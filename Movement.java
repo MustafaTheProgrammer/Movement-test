@@ -13,17 +13,24 @@ public class Movement{
         System.out.flush();
 	System.out.print("|   O   |");
 
+	//game loop    
 	while (!(playerInput.equals("q"))){
 	    playerInput = scanner.nextLine();
+	    
+	    //clear text on screen
 	    System.out.print("\033[H\033[2J");
             System.out.flush();
+	    
+	    //check user move input
 	    if (playerInput.equals("a") && !(playerxpos == 1)){
                 playerxpos--;
 	    }
 	    else if (playerInput.equals("d") && !(playerxpos == 9)){
                 playerxpos++;
 	    }
-            xpos = 0;
+
+	    //draw characters on screen
+	    xpos = 0;
 	    for (int i = 0; i <= 9; i++){
                 xpos++;
 		if (xpos == 1 || xpos == 9){
